@@ -1,3 +1,14 @@
+/*
+  The code use an Adafruit Keypad and display keypress events via the Serial Monitor. 
+  It initializes the keypad with a 4x4 layout, where each key is represented by a 
+  specific character. It continuously checks for keypad events (key press or release) 
+  and prints the corresponding key and event status to the Serial Monitor.
+
+  Board: Arduino Uno R4 
+  Component:  Keypad
+  Library: https://github.com/adafruit/Adafruit_Keypad (Adafruit Keypad by Adafruit)
+*/
+
 // Include the Adafruit_Keypad library
 #define TONE_USE_INT
 #define TONE_PITCH 440
@@ -30,7 +41,6 @@ void setup() {
   Serial.begin(9600);
   // Initialize the custom keypad
   myKeypad.begin();
-  pinMode( BUZZ_PIN, OUTPUT );
 }
 
 // Main loop function
@@ -43,15 +53,13 @@ void loop() {
     // Read the keypad event
     keypadEvent e = myKeypad.read();
     // Print the key that triggered the event
-    Serial.print((char)e.bit.KEY);
+    Serial.println((char)e.bit.KEY);
     // Print the type of event: pressed or released
-    if (e.bit.EVENT == KEY_JUST_PRESSED) Serial.println(" pressed");
-    else if (e.bit.EVENT == KEY_JUST_RELEASED) Serial.println(" released");
+    if (e.bit.EVENT == KEY_JUST_PRESSED) buzzSound(NOTE_C5);
+    else if (e.bit.EVENT == KEY_JUST_RELEASED) noTone(BUZZ_PIN);;
   }
-  if (myKeypad.read(1) == LOW){  //ドが押された時
-    buzzSound(NOTE_C4);
-  }
-    delay(10)
+
+  delay(10);
 }
 
 void buzzSound(int frequency){
