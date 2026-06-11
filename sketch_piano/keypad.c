@@ -55,8 +55,27 @@ void loop() {
     // Print the key that triggered the event
     Serial.println((char)e.bit.KEY);
     // Print the type of event: pressed or released
-    if (e.bit.EVENT == KEY_JUST_PRESSED) buzzSound(NOTE_C5);
-    else if (e.bit.EVENT == KEY_JUST_RELEASED) noTone(BUZZ_PIN);;
+
+
+    if (e.bit.EVENT == KEY_JUST_RELEASED){ 
+      noTone(BUZZ_PIN);
+    }
+    else{
+      if ((char)e.bit.KEY == '1' ) buzzSound(NOTE_C4);
+      else if ((char)e.bit.KEY == '2') buzzSound(NOTE_CS4);
+      else if ((char)e.bit.KEY == '3') buzzSound(NOTE_D4);
+      else if ((char)e.bit.KEY == 'A') buzzSound(NOTE_DS4);
+      else if ((char)e.bit.KEY == '4') buzzSound(NOTE_E4);
+      else if ((char)e.bit.KEY == '5') buzzSound(NOTE_F4);
+      else if ((char)e.bit.KEY == '6') buzzSound(NOTE_FS4);
+      else if ((char)e.bit.KEY == 'B') buzzSound(NOTE_G4);
+      else if ((char)e.bit.KEY == '7') buzzSound(NOTE_GS4);
+      else if ((char)e.bit.KEY == '8') buzzSound(NOTE_A4);
+      else if ((char)e.bit.KEY == '9') buzzSound(NOTE_AS4);
+      else if ((char)e.bit.KEY == 'C') buzzSound(NOTE_B4);
+    }
+
+
   }
 
   delay(10);
