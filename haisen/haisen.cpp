@@ -15,24 +15,39 @@ void loop() {
 
     Serial.println(value);
   if ((value >= 1000) && (1024 >= value)){
+    buzzSound(NOTE_A4);
+  }
+  else if ((value >= 850) && (890 >= value)){
+    buzzSound(NOTE_GS4);
+  }
+  else if ((value >= 725) && (750 >= value)){
+    buzzSound(NOTE_G4);
+  }
+  else if ((value >= 625) && (650 >= value)){
+    buzzSound(NOTE_F4);
+  }
+  else if ((value >= 540) && (580 >= value)){
+    buzzSound(NOTE_FS4);
+  }
+  else if ((value >= 460) && (525 >= value)){
     buzzSound(NOTE_DS4);
   }
-  else if ((value >= 840) && (900 >= value)){
+  else if ((value >= 400) && (450 >= value)){
     buzzSound(NOTE_E4);
   }
-   else if ((value >= 720) && (760 >= value)){
+   else if ((value >= 340) && (380 >= value)){
     buzzSound(NOTE_D4);
   }
-   else if ((value >= 600) && (670 >= value)){
+   else if ((value >= 290) && (335 >= value)){
     buzzSound(NOTE_C4);
   }
-   else if ((value >= 500) && (530 >= value)){
+   else if ((value >= 230) && (280 >= value)){
     buzzSound(NOTE_CS4);
   }
-   else if ((value >= 400) && (430 >= value)){
+   else if ((value >= 180) && (200 >= value)){
     buzzSound(NOTE_AS3);
   }
-    else if ((value >= 300) && (330 >= value)){
+    else if ((value >= 110) && (165 >= value)){
     buzzSound(NOTE_B3);
   }
   else{   //何も押されてない時
