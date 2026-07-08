@@ -38,7 +38,7 @@
 ### 配線図
 
 空気圧センサーをRFIDで代用している。
-![alt text](image.png)
+![alt text](image-2.png)
 
 ### 画像（基板のみ）
 
