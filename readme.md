@@ -54,7 +54,7 @@
 
 ![alt text](image-3.png)
 
-今回インターフェースはSPIを使用。
+今回インターフェースはSPIを使用。（ArduinoではSPIしか対応していないため）
 [引用元](https://www.switch-science.com/products/6104/)
 
 ### 画像（基板のみ）
