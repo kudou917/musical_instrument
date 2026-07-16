@@ -50,9 +50,17 @@
 
 ### 使用部品について
 
+#### 空気圧センサー
+
+![alt text](image-3.png)
+
+今回インターフェースはSPIを使用。
+[引用元](https://www.switch-science.com/products/6104/)
+
 ### 画像（基板のみ）
 
 ![alt text](S__18374669.jpg)
+
 
 ### 使用ライブラリ
 
